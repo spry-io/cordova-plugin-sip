@@ -10,7 +10,6 @@
   <engines>
     <engine name="cordova-android" version=">=4.0.0-dev" />
     <engine name="cordova-ios" version=">=4.0.0-dev" />
-    <engine name="cordova-wp8" version=">=4.0.0-dev" />
   </engines>
 
   <!-- android -->
@@ -73,14 +72,14 @@
     <js-module src="www/cordova-plugins-sip.js" name="linphone">
       <merges target="cordova.plugins.sip" />
     </js-module>
-    <config-file target="AndroidManifest.xml" parent="/*">
+    <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.RECORD_AUDIO" />
       <uses-permission android:name="android.permission.CAMERA" />
       <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
       <uses-permission android:name="android.permission.WAKE_LOCK" />
       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     </config-file>
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+    <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
       <activity android:name="com.sip.linphone.LinphoneMiniActivity" android:theme="@android:style/Theme.Black.NoTitleBar" />
     </config-file>
   </platform>
@@ -159,16 +158,5 @@
     </js-module>
 
 
-  </platform>
-
-  <!-- wp8 -->
-  <platform name="wp8">
-    <config-file target="config.xml" parent="/*">
-      <feature name="Linphone">
-        <param name="wp-package" value="Linphone"/>
-      </feature>
-    </config-file>
-
-    <source-file src="src/wp/Linphone.cs" />
   </platform>
 </plugin>

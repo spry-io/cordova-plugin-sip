@@ -13,7 +13,7 @@
   </engines>
 
   <!-- android -->
-  
+
   <platform name="android">
     <config-file target="config.xml" parent="/*">
       <feature name="Linphone">
@@ -76,14 +76,14 @@
     <js-module src="www/cordova-plugins-sip.js" name="linphone">
       <merges target="cordova.plugins.sip" />
     </js-module>
-    <config-file target="AndroidManifest.xml" parent="/*">
+    <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.RECORD_AUDIO" />
       <uses-permission android:name="android.permission.CAMERA" />
       <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
       <uses-permission android:name="android.permission.WAKE_LOCK" />
       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     </config-file>
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+    <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
       <activity android:name="com.sip.linphone.LinphoneMiniActivity" android:theme="@android:style/Theme.Black.NoTitleBar" />
     </config-file>
   </platform>

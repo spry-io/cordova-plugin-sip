@@ -1,0 +1,9 @@
+repositories {    
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile(name:'libs/liblinphone-sdk', ext:'aar')
+}

@@ -82,10 +82,10 @@
       <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
       <uses-permission android:name="android.permission.WAKE_LOCK" />
       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    </config-file>
-    <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
+    </config-file>-->
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <activity android:name="com.sip.linphone.LinphoneMiniActivity" android:theme="@android:style/Theme.Black.NoTitleBar" />
-    </config-file> -->
+    </config-file> 
   </platform>
 
   <!-- ios -->
@@ -100,7 +100,6 @@
     <source-file src="src/ios/Linphone.m"/>
 
     <header-file src="src/ios/libs/apple-darwin/include/" />
-
 
     <source-file framework="true" src="src/ios/libs/apple-darwin/lib/mediastreamer/plugins/libmsamr.a" target-dir="lib/mediastreamer/plugins" />
     <source-file framework="true" src="src/ios/libs/apple-darwin/lib/mediastreamer/plugins/libmsbcg729.a" target-dir="lib/mediastreamer/plugins" />

@@ -100,10 +100,11 @@
         <param name="ios-package" value="Linphone"/>
       </feature>
     </config-file>
+
     <header-file src="src/ios/Linphone.h"/>
     <source-file src="src/ios/Linphone.m"/>
 
-    <framework src="liblinphone" type="podspec" spec="~> 3.99.7" />
+    <framework src="liblinphone" type="podspec" spec="~> 3.99.8" />
 
     <header-file src="src/ios/cordova-plugin-sip-Bridging-Header.h" />
 

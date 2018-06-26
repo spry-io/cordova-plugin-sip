@@ -39,7 +39,8 @@
     <lib-file src="src/android/libs/liblinphone-sdk.aar" />
     <framework src="src/android/sip.gradle" custom="true" type="gradleReference"/>
 
-   <!--  <source-file src="src/android/libs/linphone.jar" target-dir="libs" />
+   <!--  
+    <source-file src="src/android/libs/linphone.jar" target-dir="libs" />
     
     <source-file src="src/android/libs/arm64-v8a/libbctoolbox-arm64-v8a.so" target-dir="libs/arm64-v8a" />
     <source-file src="src/android/libs/arm64-v8a/libbctoolbox-tester-arm64-v8a.so" target-dir="libs/arm64-v8a" />
@@ -102,9 +103,13 @@
     <header-file src="src/ios/Linphone.h"/>
     <source-file src="src/ios/Linphone.m"/>
 
-    <header-file src="src/ios/libs/apple-darwin/include/" />
+    <framework src="liblinphone" type="podspec" spec="~> 3.99.7" />
 
-    <source-file framework="true" src="src/ios/libs/apple-darwin/lib/mediastreamer/plugins/libmsamr.a" target-dir="lib/mediastreamer/plugins" />
+    <header-file src="src/ios/cordova-plugin-sip-Bridging-Header.h" />
+
+    <!-- <header-file src="src/ios/libs/apple-darwin/include/" /> -->
+
+    <!-- <source-file framework="true" src="src/ios/libs/apple-darwin/lib/mediastreamer/plugins/libmsamr.a" target-dir="lib/mediastreamer/plugins" />
     <source-file framework="true" src="src/ios/libs/apple-darwin/lib/mediastreamer/plugins/libmsbcg729.a" target-dir="lib/mediastreamer/plugins" />
     <source-file framework="true" src="src/ios/libs/apple-darwin/lib/mediastreamer/plugins/libmsopenh264.a" target-dir="lib/mediastreamer/plugins" />
     <source-file framework="true" src="src/ios/libs/apple-darwin/lib/mediastreamer/plugins/libmssilk.a" target-dir="lib/mediastreamer/plugins" />
@@ -140,10 +145,9 @@
     <source-file framework="true" src="src/ios/libs/apple-darwin/lib/libtunnel.a" target-dir="lib" />
     <source-file framework="true" src="src/ios/libs/apple-darwin/lib/libvo-amrwbenc.a" target-dir="lib" />
     <source-file framework="true" src="src/ios/libs/apple-darwin/lib/libvpx.a" target-dir="lib" />
-    <source-file framework="true" src="src/ios/libs/apple-darwin/lib/libx264.a" target-dir="lib" />
+    <source-file framework="true" src="src/ios/libs/apple-darwin/lib/libx264.a" target-dir="lib" /> -->
 
-    <source-file src="src/ios/libs/apple-darwin/share/" />
-
+    <!-- <source-file src="src/ios/libs/apple-darwin/share/" />
 
     <framework src="AVFoundation.framework" />
     <framework src="AudioToolbox.framework" />
@@ -158,12 +162,10 @@
     <framework src="libstdc++.6.0.9.tbd" />
     <framework src="libstdc++.6.tbd" />
     <framework src="libstdc++.tbd" />
-    <framework src="libc++abi.tbd" />
+    <framework src="libc++abi.tbd" /> -->
 
     <js-module src="www/cordova-plugins-sip.js" name="linphone">
       <merges target="cordova.plugins.sip" />
     </js-module>
-
-
   </platform>
 </plugin>

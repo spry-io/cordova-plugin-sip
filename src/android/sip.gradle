@@ -5,5 +5,5 @@ repositories {
 }
 
 dependencies {
-    compile(name:'libs/liblinphone-sdk', ext:'aar')
+    compile(name:'liblinphone-sdk', ext:'aar')
 }

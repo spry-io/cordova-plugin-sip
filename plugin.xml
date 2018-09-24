@@ -101,7 +101,7 @@
       </feature>
     </config-file>
 
-    <framework src="liblinphone" type="podspec" spec="~> 3.16.5" />
+    <framework src="liblinphone" type="podspec" spec="~> 4.0.2" />
     <header-file src="src/ios/cordova-plugin-sip-Bridging-Header.h" />
 
     <header-file src="src/ios/Linphone.h"/>

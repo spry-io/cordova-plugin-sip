@@ -171,7 +171,8 @@ public class LinphoneMiniManager implements LinphoneCoreListener {
 		mLinphoneCore.setRootCA(basePath + "/rootca.pem");
 		mLinphoneCore.setPlayFile(basePath + "/toy_mono.wav");
 		mLinphoneCore.setChatDatabasePath(basePath + "/linphone-history.db");
-
+		mLinphoneCore.enableSpeaker(false);
+		
 		int availableCores = Runtime.getRuntime().availableProcessors();
 		mLinphoneCore.setCpuCount(availableCores);
 	}

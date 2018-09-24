@@ -104,10 +104,6 @@
     <header-file src="src/ios/Linphone.h"/>
     <source-file src="src/ios/Linphone.m"/>
 
-    <framework src="liblinphone" type="podspec" spec="~> 3.99.8" />
-
-    <header-file src="src/ios/cordova-plugin-sip-Bridging-Header.h" />
-
     <!-- <header-file src="src/ios/libs/apple-darwin/include/" /> -->
 
     <!-- <source-file framework="true" src="src/ios/libs/apple-darwin/lib/mediastreamer/plugins/libmsamr.a" target-dir="lib/mediastreamer/plugins" />
@@ -164,7 +160,24 @@
     <framework src="libstdc++.6.tbd" />
     <framework src="libstdc++.tbd" />
     <framework src="libc++abi.tbd" /> -->
-
+    
+    <framework src="src/ios/Frameworks/bctoolbox-tester.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/bctoolbox.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/belcard.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/belr.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/linphone.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/linphonetester.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/mediastreamer_base.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/mediastreamer_voip.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/mediastreamer2.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/msamr.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/mscodec2.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/msopenh264.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/mssilk.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/mswebrtc.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/msx264.framework" embed="true" custom="true"/>
+    <framework src="src/ios/Frameworks/ortp.framework" embed="true" custom="true"/>
+    
     <js-module src="www/cordova-plugins-sip.js" name="linphone">
       <merges target="cordova.plugins.sip" />
     </js-module>

@@ -1,4 +1,15 @@
 # cordova-plugin-sip
+
+## Supported Platforms
+
+- Android API all versions
+
+## Installation
+
+Cordova local build
+
+    cordova plugin add https://github.com/spry-io/cordova-plugin-sip.git
+
 <h2>SIP plugin for Cordova & Phonegap Apps (IOS and Android)</h2>
 
 <h3>IOS</h3>

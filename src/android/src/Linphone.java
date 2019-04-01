@@ -31,6 +31,7 @@ public class Linphone extends CordovaPlugin  {
         mLinphoneManager = new LinphoneMiniManager(mContext);
         mLinphoneCore = mLinphoneManager.getLc();
         mInstance = this;
+        mLinphoneManager.useRandomPort(true);
     }
 
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext)

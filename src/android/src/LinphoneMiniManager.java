@@ -35,6 +35,7 @@ import org.linphone.core.LinphoneChatMessage;
 import org.linphone.core.LinphoneChatRoom;
 import org.linphone.core.LinphoneContent;
 import org.linphone.core.LinphoneCore;
+import org.linphone.core.LinphoneCore.Transports;
 import org.linphone.core.LinphoneCore.EcCalibratorStatus;
 import org.linphone.core.LinphoneCore.GlobalState;
 import org.linphone.core.LinphoneCore.RegistrationState;
@@ -58,6 +59,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Timer;
 import java.util.TimerTask;
+import org.apache.cordova.LOG;
 
 /**
  * @author Sylvain Berfini
@@ -71,6 +73,7 @@ public class LinphoneMiniManager implements LinphoneCoreListener {
 	public static SurfaceView mCaptureView;
 	public CallbackContext mCallbackContext;
 	public CallbackContext mLoginCallbackContext;
+	String TAG = "SipPlugin";
 
 	public LinphoneMiniManager(Context c) {
 		mContext = c;
@@ -94,6 +97,32 @@ public class LinphoneMiniManager implements LinphoneCoreListener {
 		} catch (LinphoneCoreException e) {
 		} catch (IOException e) {
 		}
+	}
+
+	public void useRandomPort(boolean enabled) {
+		useRandomPort(enabled, true);
+	}
+
+	public void useRandomPort(boolean enabled, boolean apply) {
+		if(getLc() != null ) {
+			getLc().getConfig().setBool("app", "random_port", enabled);
+			if (apply) {
+				if (enabled) {
+					setSipPort(-1);
+				} else {
+					setSipPort(5060);
+				}
+			}
+		}
+	}
+
+	public void setSipPort(int port) {
+		if (getLc() == null) return;
+        Transports transports = getLc().getSignalingTransportPorts();
+		transports.udp = 0; //to use udp, set "port" instead of "0"
+		transports.tcp = port; //to disable tcp, set "0"
+		transports.tls = 0; //to use tls, set "-1"
+		getLc().setSignalingTransportPorts(transports);
 	}
 
     public LinphoneCore getLc(){
@@ -527,8 +556,9 @@ public class LinphoneMiniManager implements LinphoneCoreListener {
 
 
 			//builder.saveNewAccount();
-		} catch (LinphoneCoreException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
+			LOG.d(TAG, e.getMessage());
 		}
 	}
 
